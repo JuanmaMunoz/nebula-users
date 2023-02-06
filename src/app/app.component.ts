@@ -27,6 +27,10 @@ export class AppComponent implements OnInit{
     this.useLanguage();
   }
 
+  ngOnDestroy(): void{
+    this.subscription.unsubscribe();
+  }
+
   changeLanguage(): void {
     this.languageSelected = this.languageSelected === 'en' ? 'es' : 'en';
     this.useLanguage();
@@ -35,5 +39,17 @@ export class AppComponent implements OnInit{
   useLanguage():void{
     this.translate.use(this.languageSelected);
     localStorage.setItem('nebulaLanguage', this.languageSelected);
+  }
+
+  changeStyle():void{
+    const root:any = document.querySelector(':root');
+    root.style.setProperty('--bs-primary','#DDDDDD');
+    root.style.setProperty('--bs-primary-rgb','13,13,13');
+    root.style.setProperty('--bs-blue','#DDDDDD');
+    root.style.setProperty('--bs-btn-color','red');
+    const btns = document.querySelectorAll('.btn-primary');
+    btns.forEach((element:any) => {
+      element.style.setProperty('--bs-primary','red');
+    });
   }
 }
