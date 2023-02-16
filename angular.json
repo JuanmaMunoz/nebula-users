@@ -38,7 +38,7 @@
               "libraryName": "nebula-users",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:4203/"
+            "deployUrl": "https://devel.nebulaservice.net/users/"
           },
           "configurations": {
             "production": {
