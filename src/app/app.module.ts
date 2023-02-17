@@ -7,15 +7,12 @@ import { assetUrl } from 'src/single-spa/asset-url';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { EmptyRouteComponent } from './shared-module/components/empty-route/empty-route.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
 @NgModule({
-  declarations: [
-    AppComponent,
-    EmptyRouteComponent
-  ],
+  declarations: [AppComponent, EmptyRouteComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -26,9 +23,9 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-    })
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
