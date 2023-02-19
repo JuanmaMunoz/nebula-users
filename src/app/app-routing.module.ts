@@ -2,7 +2,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './info-module/utils/guards/auth.guard';
-import { EmptyRouteComponent } from './shared-module/components/empty-route/empty-route.component';
+import { NotFoundComponent } from './shared-module/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: EmptyRouteComponent,
+    component: NotFoundComponent,
   },
 ];
 

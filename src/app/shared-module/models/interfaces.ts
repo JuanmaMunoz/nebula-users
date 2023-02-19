@@ -14,3 +14,9 @@ export interface ISession {
   lvl: string;
   token: string;
 }
+export interface INavigationEnd {
+  id: number;
+  url: string;
+  urlAfterRedirects: string;
+  type: number;
+}
