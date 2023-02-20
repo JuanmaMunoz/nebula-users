@@ -1,0 +1,15 @@
+<div class="configuration">
+  <h1 class="text-primary">{{ 'myConfiguration' | translate }}</h1>
+  <h2 class="text-secondary mt-4">{{ jwt.email }}</h2>
+  <h3 class="text-primary">
+    Token Exp: <span class="text-secondary">{{ jwt.exp * 1000 | date : 'dd/MM/YYYY: HH:MM:SS' }}</span>
+  </h3>
+  <h3 class="text-primary">
+    Lvl: <span class="text-secondary">{{ jwt.lvl }}</span>
+  </h3>
+  <h3 class="text-primary">
+    Rol: <span class="text-secondary">{{ jwt.roles.nebulausers }}</span>
+  </h3>
+  <a class="text-primary" [routerLink]="['/users/info']"> Go to info</a>
+  <a class="text-primary ms-4" [routerLink]="['/users/configuration/detail/' + jwt.uuid]"> Go to detail</a>
+</div>

@@ -11,6 +11,11 @@ const routes: Routes = [
     loadChildren: () => import('./info-module/info.module').then((m) => m.InfoModule),
   },
   {
+    path: 'users/configuration',
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./configuration-module/configuration.module').then((m) => m.ConfigurationModule),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
