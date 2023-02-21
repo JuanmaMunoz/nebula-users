@@ -7,6 +7,7 @@ import { assetUrl } from 'src/single-spa/asset-url';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared-module/shared.module';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
@@ -16,6 +17,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
